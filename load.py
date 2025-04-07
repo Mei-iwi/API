@@ -1,10 +1,16 @@
+import os
 import pyodbc
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from dotenv import load_dotenv
+load_dotenv()
+
 app = Flask(__name__)
 CORS(app)
-Server = "MEI\\SQLEXPRESS"
-database = "LOGIN"
+# Server = "MEI\\SQLEXPRESS"
+# database = "LOGIN"
+Server = os.getenv("DB_SERVER", "MEI\\SQLEXPRESS")  # Tên server của bạn
+database = os.getenv("DB_DATABASE", "LOGIN")  
 def getDataBase():
    return pyodbc.connect(f'DRIVER={{SQL Server}};'f'SERVER={Server};'f'DATABASE={database};''Trusted_Connection=yes;''PORT = 1433')
 
