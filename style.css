@@ -1,0 +1,17 @@
+#dataTable {
+  border-collapse: collapse;
+  margin: auto;
+  background-color: blue;
+  color: white;
+}
+td,
+th {
+  border: 1px solid black;
+  width: 200px;
+}
+.n {
+  border: none;
+}
+form {
+  width: 50%;
+}

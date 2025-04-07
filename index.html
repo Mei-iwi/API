@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>demo</title>
+  </head>
+  <body>
+    <form class="tech-login">
+      <fieldset>
+        <legend>SIGN IN</legend>
+        <table>
+          <tr>
+            <td class="n">
+              <label>Nhập họ và tên <input id="ACC" type="text" /></label>
+            </td>
+          </tr>
+          <tr>
+            <td class="n">
+              <label>Nhập mật khẩu <input id="PASS" type="text" /></label>
+            </td>
+          </tr>
+        </table>
+        <button onclick="addData()">SIGN IN</button>
+      </fieldset>
+    </form>
+    <button onclick="getData()">Hiện danh sách</button>
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>NUMBERS</th>
+          <th>ACCOUNT</th>
+          <th>PASSWORD</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="./loadjs.js"></script>
+  </body>
+</html>
