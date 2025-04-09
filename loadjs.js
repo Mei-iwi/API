@@ -1,5 +1,5 @@
 function getData() {
-  fetch("http://127.0.0.1:5000/getData")
+  fetch("https://90f2-222-253-53-33.ngrok-free.app/getData")
     .then((response) => response.json())
     .then((data) => {
       let tableBody = document.querySelector("#dataTable tbody");
@@ -19,7 +19,7 @@ function getData() {
 function addData() {
   const ACC = document.getElementById("ACC").value;
   const PASS = document.getElementById("PASS").value;
-  fetch("http://127.0.0.1:5000/addData", {
+  fetch("https://90f2-222-253-53-33.ngrok-free.app/addData", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ACC: ACC, PASS: PASS }),

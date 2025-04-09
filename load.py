@@ -7,10 +7,10 @@ load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
-# Server = "MEI\\SQLEXPRESS"
-# database = "LOGIN"
-Server = os.getenv("DB_SERVER", "MEI\\SQLEXPRESS")  # Tên server của bạn
-database = os.getenv("DB_DATABASE", "LOGIN")  
+Server = "MEI\\SQLEXPRESS"
+database = "LOGIN"
+# Server = os.getenv("DB_SERVER", "MEI\\SQLEXPRESS")  # Tên server của bạn
+# database = os.getenv("DB_DATABASE", "LOGIN")  
 def getDataBase():
    return pyodbc.connect(f'DRIVER={{SQL Server}};'f'SERVER={Server};'f'DATABASE={database};''Trusted_Connection=yes;''PORT = 1433')
 
@@ -43,5 +43,4 @@ def addData():
     conn.close()
     return jsonify({"message":"Congratulation"}), 201
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
-
+    app.run(host="0.0.0.0", port=5000, debug=True)
