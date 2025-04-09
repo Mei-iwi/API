@@ -14,7 +14,7 @@ database = "LOGIN"
 def getDataBase():
    return pyodbc.connect(f'DRIVER={{SQL Server}};'f'SERVER={Server};'f'DATABASE={database};''Trusted_Connection=yes;''PORT = 1433')
 
-@app.route("/getData", methods=['GET'])
+@app.route("/", methods=['GET'])
 def getData():
     conn = getDataBase()
     cursor = conn.cursor()
@@ -26,7 +26,7 @@ def getData():
     cursor.close()
     conn.close()
     return response
-@app.route("/addData", methods=['POST'])
+@app.route("/", methods=['POST'])
 def addData():
     data = request.get_json()
     ACC = data.get('ACC')
