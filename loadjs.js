@@ -12,8 +12,6 @@ function getData() {
         }</td>`;
         tableBody.appendChild(tr);
       });
-      output += "</ol>";
-      document.getElementById("result").innerHTML = output;
     });
 }
 function addData() {

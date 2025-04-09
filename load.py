@@ -23,9 +23,9 @@ def getData():
     data = [{'ACC': row[0], 'PASS':row[1]} for row in rows]
     response = jsonify(data)
     response.headers.add("Access-Control-Allow-Origin", "*")
-    return response
     cursor.close()
     conn.close()
+    return response
 @app.route("/addData", methods=['POST'])
 def addData():
     data = request.get_json()
